@@ -2,7 +2,7 @@
 
 An open source re-implementation of Google's **AI co-scientist** ([Gottweis et al., *Nature*, 2026](https://www.nature.com/articles/s41586-026-10644-y); [research blog, 2025](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/)) — a multi-agent system that takes a natural-language research goal and produces a tournament-ranked **research overview** of novel hypotheses.
 
-The agent roster, prompts, and control flow follow the paper. Source materials that were used to instruct the coding agent (Claude Code) is included with the repo:
+The agent roster, prompts, and control flow follow the paper. Source materials that were used to instruct the coding agent (mainly Claude Code) include:
 
 - [`reference/8 Pseudocode of Co-Scientist agents`](reference/) — the supplementary pseudocode for Supervisor, Generation, Reflection, Ranking, Evolution, Proximity, Meta-review.
 - [`reference/9 Prompts for the specialized agents in .md`](reference/) — the per-agent prompts from the paper's supplement, used verbatim (modulo Jinja interpolation) in [`config/prompts/`](config/prompts/).
