@@ -86,3 +86,4 @@ testpaths = ["co_scientist/tests"]
 python_version = "3.11"
 strict = false
 warn_unused_ignores = true
+

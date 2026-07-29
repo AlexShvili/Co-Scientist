@@ -11,8 +11,8 @@ from typing import Any
 from ..config import Config
 from .base import Tool, ToolCtx, ToolResult, to_anthropic_tool
 from .builtins.arxiv import ArxivSearchTool
-from .builtins.europe_pmc import EuropePMCSearchTool
-from .builtins.pubmed import PubmedSearchTool
+# from .builtins.europe_pmc import EuropePMCSearchTool
+# from .builtins.pubmed import PubmedSearchTool
 from .science_skills import ScienceSkillTool, discover_skills
 from .web_fetch import WebFetchTool
 from .web_search import WebSearchTool
@@ -22,24 +22,47 @@ from .web_search import WebSearchTool
 AGENT_TOOLS: dict[str, set[str]] = {
     "generation": {
         "web_search", "web_fetch",
-        "pubmed_search", "arxiv_search", "europe_pmc_search",
+        "arxiv_search", 
         "literature_*",   # any science-skills literature_* tools
     },
     "reflection": {
         "web_search", "web_fetch",
-        "pubmed_search", "arxiv_search", "europe_pmc_search",
+        "arxiv_search", 
         "literature_*",
         # code_exec wired in M2
     },
     "ranking": set(),                # no tools mid-debate
     "evolution": {
         "web_search", "web_fetch",
-        "pubmed_search", "arxiv_search", "europe_pmc_search",
+        "arxiv_search", 
         "literature_*",
     },
     "proximity": set(),
     "metareview": set(),
 }
+
+
+# AGENT_TOOLS: dict[str, set[str]] = {
+#     "generation": {
+#         "web_search", "web_fetch",
+#         "pubmed_search", "arxiv_search", "europe_pmc_search",
+#         "literature_*",   # any science-skills literature_* tools
+#     },
+#     "reflection": {
+#         "web_search", "web_fetch",
+#         "pubmed_search", "arxiv_search", "europe_pmc_search",
+#         "literature_*",
+#         # code_exec wired in M2
+#     },
+#     "ranking": set(),                # no tools mid-debate
+#     "evolution": {
+#         "web_search", "web_fetch",
+#         "pubmed_search", "arxiv_search", "europe_pmc_search",
+#         "literature_*",
+#     },
+#     "proximity": set(),
+#     "metareview": set(),
+# }
 
 
 class ToolRegistry:
